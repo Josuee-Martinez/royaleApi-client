@@ -1,22 +1,30 @@
-.App {
+.landing-section {
+  background: url(./img/clash.jpg);
+  height: calc(100vh);
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.landing {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
+  color: #2c95c8;
 }
 
-.App-logo {
-  height: 40vmin;
+.landing-heading {
+  font-size: 2em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.landing-paragraph {
+  font-size: 1.5em;
+  font-family: "Charm", cursive;
 }
 
-.App-link {
-  color: #09d3ac;
+.center {
+  text-align: center;
 }

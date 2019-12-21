@@ -1,16 +1,28 @@
 import React, { Fragment } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./store";
+
 import Navbar from "./components/layout/Navbar";
 import Home from "./components/layout/Home";
+import MemberTag from "./components/layout/MemberTag";
 import "./App.css";
 
 function App() {
   return (
-    <Fragment>
-      <Navbar />
-      <div>
-        <Home />
-      </div>
-    </Fragment>
+    <Provider store={store}>
+      <Router>
+        <Fragment>
+          <Navbar />
+          <div className="container">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/member/:tag" component={MemberTag} />
+            </Switch>
+          </div>
+        </Fragment>
+      </Router>
+    </Provider>
   );
 }
 

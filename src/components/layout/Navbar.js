@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
-      <a class="navbar-brand" href="!#">
+      <Link className="navbar-brand" to="/">
         Fire and Ice
-      </a>
+      </Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -21,7 +22,7 @@ const Navbar = () => {
         <ul className="navbar-nav ml-auto">
           <li className="nav-item active">
             <a className="nav-link" href="#!">
-              War <span class="sr-only">(current)</span>
+              War <span className="sr-only">(current)</span>
             </a>
           </li>
           <li className="nav-item">
@@ -30,9 +31,9 @@ const Navbar = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#!">
-              Members
-            </a>
+            <Link className="nav-link" to="/">
+              About
+            </Link>
           </li>
         </ul>
       </div>

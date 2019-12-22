@@ -9,8 +9,8 @@ const MemberItem = ({ member }) => {
         <Link to={`/member/${member.tag}`}>{member.name}</Link>
       </td>
       <td>{member.trophies}</td>
-      <td>{member.role}</td>
-      <td>{member.donations}</td>
+      <td>{member.role.toLowerCase()}</td>
+      {/* <td>{member.donations}</td> */}
       <td>{member.expLevel}</td>
     </tr>
   );

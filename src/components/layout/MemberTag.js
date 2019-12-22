@@ -11,13 +11,16 @@ const MemberTag = ({ match, getPlayerData, playerData }) => {
     <Fragment>
       <div className="card my-2">
         <div className="card-body center">
-          <h5 className="card-title">
-            <div>
-              <img src={playerData.favoriteCardIcon} alt="" />
-            </div>
-            {playerData.name}
-          </h5>
-          <p className="card-text"></p>
+          <h4 className="card-text">{playerData.name}'s Current Deck</h4>
+          <div className="clearfix">
+            {playerData.currentDeck === null
+              ? ""
+              : playerData.currentDeck.map(card => (
+                  <figure className="deck" key={card.id}>
+                    <img src={card.icon} alt="" />
+                  </figure>
+                ))}
+          </div>
           <hr />
           <div className="row ">
             <div className="col-4">
@@ -42,9 +45,8 @@ const MemberTag = ({ match, getPlayerData, playerData }) => {
             </div>
             <div className="col-4">
               <p>Donations Recieved</p>
-              <h5>
-                <h5>{playerData.donationsReceived}</h5>
-              </h5>
+
+              <h5>{playerData.donationsReceived}</h5>
             </div>
             <div className="col-4">
               <p>Donation Average</p>
@@ -59,9 +61,8 @@ const MemberTag = ({ match, getPlayerData, playerData }) => {
             </div>
             <div className="col-4">
               <p>War Day Wins</p>
-              <h5>
-                <h5>{playerData.warDayWins}</h5>
-              </h5>
+
+              <h5>{playerData.warDayWins}</h5>
             </div>
             <div className="col-4">
               <p>Challenge Wins</p>
@@ -70,15 +71,40 @@ const MemberTag = ({ match, getPlayerData, playerData }) => {
           </div>
         </div>
       </div>
+
       <div className="card my-2">
-        <div className="portfolio clearfix">
-          {playerData.currentDeck === null
-            ? ""
-            : playerData.currentDeck.map(card => (
-                <figure className="project">
-                  <img src={card.icon} alt="" />
-                </figure>
-              ))}
+        <div className="card-body center">
+          <h4>More Stats</h4>
+          <br />
+          <div className="row ">
+            <div className="col-4">
+              <p>Clan Cards Collected</p>
+              <h5>{playerData.clanCardsCollected}</h5>
+            </div>
+            <div className="col-4">
+              <p>Cards unlocked</p>
+              <h5>{playerData.cardsFound}</h5>
+            </div>
+            <div className="col-4">
+              <p>Lifetime Donations</p>
+              <h5>{playerData.totalDonations}</h5>
+            </div>
+          </div>
+          <hr />
+          <div className="row ">
+            <div className="col-4">
+              <p>Games Played</p>
+              <h5>{playerData.gamesPlayed}</h5>
+            </div>
+            <div className="col-4">
+              <p>Games Lost</p>
+              <h5>{playerData.gamesLost}</h5>
+            </div>
+            <div className="col-4">
+              <p>Games Drawn</p>
+              <h5>{playerData.gamesDrawn}</h5>
+            </div>
+          </div>
         </div>
       </div>
     </Fragment>

@@ -1,3 +1,7 @@
+nav a {
+  color: #fff !important;
+}
+
 .landing-section {
   height: calc(100vh);
   width: 100%;
@@ -38,19 +42,14 @@ img {
   max-height: 100%;
 } */
 
-.portfolio {
-  margin: 4em 5% 4em;
-  text-align: center;
-}
-
-.project {
+.deck {
   margin: 0;
   position: relative;
   width: 25%;
   float: left;
 }
 
-.project img {
+.deck img {
   display: block;
 }
 
@@ -69,7 +68,7 @@ img {
 }
 
 @media (min-width: 37rem) {
-  .project {
+  .deck {
     width: 25%;
     float: left;
   }

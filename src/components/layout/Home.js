@@ -64,24 +64,25 @@ const Home = ({ getClanData, clanData }) => {
           </div>
         </div>
       </div>
-
-      <table className="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Trophies</th>
-            <th scope="col">Role</th>
-            <th scope="col">Donations</th>
-            <th scope="col">Level</th>
-          </tr>
-        </thead>
-        <tbody>
-          {clanData.members.map(member => (
-            <MemberItem key={member.rank} member={member}></MemberItem>
-          ))}
-        </tbody>
-      </table>
+      <div className="table-responsive-">
+        <table className="table table-hover table-sm">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Trophies</th>
+              <th scope="col">Role</th>
+              {/* <th scope="col">Donations</th> */}
+              <th scope="col">Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            {clanData.members.map(member => (
+              <MemberItem key={member.rank} member={member}></MemberItem>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

@@ -64,9 +64,9 @@ const Home = ({ getClanData, clanData }) => {
           </div>
         </div>
       </div>
-      <div className="table-responsive-">
-        <table className="table table-hover table-sm">
-          <thead>
+      <div className="table-responsive">
+        <table className="table table-hover table-fixed table-sm">
+          <thead className="thead-dark">
             <tr>
               <th scope="col">#</th>
               <th scope="col">Name</th>

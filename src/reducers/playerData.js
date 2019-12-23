@@ -29,7 +29,6 @@ export default function(state = initialState, action) {
 
   switch (type) {
     case PLAYER_DATA:
-      console.log(payload);
       return {
         ...state,
         name: payload.name,

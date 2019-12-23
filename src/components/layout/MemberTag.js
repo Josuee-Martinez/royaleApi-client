@@ -1,10 +1,18 @@
 import React, { useEffect, useState, Fragment } from "react";
 import { connect } from "react-redux";
 import { getPlayerData } from "../../actions/playerData";
-import axios from "axios";
-const MemberTag = ({ match, getPlayerData, playerData }) => {
+import { getChestsData } from "../../actions/chestsData";
+
+const MemberTag = ({
+  match,
+  getPlayerData,
+  playerData,
+  getChestsData,
+  chestData
+}) => {
   useEffect(() => {
     getPlayerData(match.params.tag);
+    getChestsData(match.params.tag);
   }, [getPlayerData, match.params.tag]);
 
   return (
@@ -112,7 +120,10 @@ const MemberTag = ({ match, getPlayerData, playerData }) => {
 };
 
 const mapStateToProps = state => ({
-  playerData: state.playerData
+  playerData: state.playerData,
+  chestsData: state.chestsData
 });
 
-export default connect(mapStateToProps, { getPlayerData })(MemberTag);
+export default connect(mapStateToProps, { getPlayerData, getChestsData })(
+  MemberTag
+);
